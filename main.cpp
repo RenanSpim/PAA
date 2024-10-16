@@ -279,24 +279,30 @@ private:
     }
 };
 
-int main() {
-    vector<double> inputArr(1000000);
+int main(int argc, char *argv[]) {
+    vector<double> inputArr(stoi(argv[1]));
     Sort sort;
 
-    for (int i = 0; i < inputArr.size(); i++) {
-        inputArr[i] = (rand() % 100000000) / 100;
-    }
-    
     std::chrono::duration<double, std::milli> durations[3];
     double sum = 0;
 
     for (int i = 0; i < 3; i++) {
-        for (int i = 0; i < inputArr.size(); i++) {
-            inputArr[i] = (rand() % 100000000) / 100;
+        for (int j = 0; j < inputArr.size(); j++) {
+            switch (argv[2][0]) {
+            case 'a':
+                inputArr[j] = (rand() % 100000) / 100;
+                break;
+            case 'o':
+                inputArr[j] = j / 1000.0;
+                break;
+            default:
+                inputArr[j] = (inputArr.size() - j) / 1000.0;
+                break;
+            }
         }
 
         auto start = chrono::high_resolution_clock::now();
-        sort.bubble(inputArr);
+        sort.insertion(inputArr);
         auto end = chrono::high_resolution_clock::now();
 
         durations[i] = end - start;

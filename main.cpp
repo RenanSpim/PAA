@@ -88,6 +88,19 @@ public:
         inputArr = outputArr;
     }
 
+    void heap(vector<double>& inputArr) {
+        int n = inputArr.size();
+
+        for (int i = n / 2 - 1; i >= 0; i--) {
+            heapify(inputArr, n, i);
+        }
+
+        for (int i = n - 1; i >= 0; i--) {
+            swap(inputArr[0], inputArr[i]);
+            heapify(inputArr, i, 0);
+        }
+    }
+
     void insertion(vector<double>& inputArr) {
         int n = inputArr.size();
 
@@ -107,6 +120,18 @@ public:
 
     void quick(vector<double>& inputArr) {
         _quick_sort(inputArr, 0, inputArr.size() - 1);
+    }
+
+    void radix(vector<double>& inputArr) {
+        int m = inputArr[0];
+
+        for (int i = 1; i < inputArr.size(); i++) {
+            if (m < inputArr[i]) m = inputArr[i];
+        }
+
+        for (int exp = 1; m / exp > 0; exp *= 10) {
+            _countSort(inputArr, exp);
+        }
     }
 
     void selection(vector<double>& inputArr) {
@@ -146,6 +171,46 @@ private:
         Node *next;
     };
 
+    void _countSort(vector<double>& inputArr, int exp) {
+        int i, n = inputArr.size();
+        vector<int> count(10, 0);
+        vector<double> output(n);
+        for (i = 0; i < n; i++) {
+            count[(int)(inputArr[i] / exp) % 10]++;
+        }
+
+        for (i = 1; i < 10; i++) {
+            count[i] += count[i - 1];
+        }
+
+        for (i = n - 1; i >= 0; i--) {
+            output[count[(int)(inputArr[i] / exp) % 10]-- - 1] = inputArr[i];
+        }
+
+        for (int i = 0; i < n; i++) {
+            inputArr[i] = output[i];
+        }
+    }
+
+    void heapify(vector<double>& inputArr, int n, int i) {
+        int largest = i;
+        int l = 2 * i + 1;
+        int r = 2 * (i + 1);
+
+        if (l < n && inputArr[l] > inputArr[largest]) {
+            largest = l;
+        }
+
+        if (r < n && inputArr[r] > inputArr[largest]) {
+            largest = r;
+        }
+
+        if (largest != i) {
+            swap(inputArr[i], inputArr[largest]);
+            heapify(inputArr, n, largest);
+        }
+    }
+    
     void _merge_sort(vector<double>& inputArr, int left, int right) {
         if (left >= right) return;
 
@@ -216,7 +281,7 @@ int main() {
     vector<double> inputArr = { 2, 24, 1, 2, 5, 1, 10, 8, 8, 4, 6, 0 };
     Sort sort;
     
-    sort.shell(inputArr);
+    sort.radix(inputArr);
     
     for (auto& elem : inputArr)
         cout << elem << " ";

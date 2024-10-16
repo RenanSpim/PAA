@@ -1,6 +1,7 @@
 #include <iostream>
 #include <chrono>
 #include <random>
+#include <algorithm>
 #include <vector>
 
 using namespace std;
@@ -21,45 +22,49 @@ public:
 
     void bucket(vector<double>& inputArr) {
         int n = inputArr.size();
-        vector<Node*> buckets(n, nullptr);
+        vector<Node *> buckets(n, nullptr);
+        
+        double minValue = *min_element(inputArr.begin(), inputArr.end());
+        double maxValue = *max_element(inputArr.begin(), inputArr.end());
+        
+        double range = (maxValue - minValue) / n;
 
         for (auto& elem : inputArr) {
-            int i = (int) (elem * n);
-            Node *newNode = new Node{ elem, nullptr };
-
+            int i = (int)((elem - minValue) / range);
             if (i >= n) i = n - 1;
+
+            Node *newNode = new Node{ elem, nullptr };
 
             if (buckets[i] == nullptr) {
                 buckets[i] = newNode;
-                continue;
-            }
+            } else {
+                Node *curr = buckets[i];
+                Node *prev = nullptr;
 
-            Node *curr = buckets[i];
-
-            while (curr->next != nullptr) {
-                if (curr->data > newNode->data) {
-                    swap(curr->data, newNode->data);
+                while (curr != nullptr && curr->data < newNode->data) {
+                    prev = curr;
+                    curr = curr->next;
                 }
-                
-                curr = curr->next;
-            }
-            
-            if (curr->data > newNode->data) {
-                swap(curr->data, newNode->data);
-            }
 
-            curr->next = newNode;
+                if (prev == nullptr) {
+                    newNode->next = buckets[i];
+                    buckets[i] = newNode;
+                } else {
+                    prev->next = newNode;
+                    newNode->next = curr;
+                }
+            }
         }
 
         int index = 0;
-        Node *curr;
-        
         for (auto& bucket : buckets) {
-            curr = bucket;
-
+            Node *curr = bucket;
+            
             while (curr != nullptr) {
                 inputArr[index++] = curr->data;
+                Node *temp = curr;
                 curr = curr->next;
+                delete temp;
             }
         }
     }
@@ -121,7 +126,7 @@ public:
     }
 
     void quick(vector<double>& inputArr) {
-        _quick_sort(inputArr, 0, inputArr.size() - 1);
+        _quickSort(inputArr, 0, inputArr.size() - 1);
     }
 
     void radix(vector<double>& inputArr) {
@@ -212,6 +217,22 @@ private:
             heapify(inputArr, n, largest);
         }
     }
+
+    int partition(vector<double>& inputArr, int low, int high) {
+        int pivot = inputArr[high];
+        int i = low - 1;
+
+        for (int j = low; j <= high - 1; j++) {
+            if (inputArr[j] < pivot) {
+                i++;
+                swap(inputArr[i], inputArr[j]);
+            }
+        }
+        
+        swap(inputArr[i + 1], inputArr[high]);  
+
+        return i + 1;
+    }
     
     void _merge_sort(vector<double>& inputArr, int left, int right) {
         if (left >= right) return;
@@ -258,31 +279,19 @@ private:
         }
     }
 
-    void _quick_sort(vector<double>& inputArr, int low, int high) {
-        if (low >= high) return;
-
-        double pivot = inputArr[high];
-        int i = low - 1;
-
-        for (int j = low; j < high; j++) {
-            if (inputArr[j] >= pivot) continue;
-            
-            i++;
-            swap(inputArr[j], inputArr[i]);
+    void _quickSort(vector<double>& inputArr, int low, int high) {
+        if (low < high) {
+            int pi = partition(inputArr, low, high);
+            _quickSort(inputArr, low, pi - 1);
+            _quickSort(inputArr, pi + 1, high);
         }
-
-        swap(inputArr[i + 1], inputArr[high]);
-        int partitionI = i + 1;
-
-        _quick_sort(inputArr, low, partitionI - 1);
-        _quick_sort(inputArr, partitionI + 1, high);
     }
 };
 
 int main(int argc, char *argv[]) {
     vector<double> inputArr(stoi(argv[1]));
     Sort sort;
-
+    
     std::chrono::duration<double, std::milli> durations[3];
     double sum = 0;
 
@@ -302,7 +311,7 @@ int main(int argc, char *argv[]) {
         }
 
         auto start = chrono::high_resolution_clock::now();
-        sort.insertion(inputArr);
+        sort.quick(inputArr);
         auto end = chrono::high_resolution_clock::now();
 
         durations[i] = end - start;

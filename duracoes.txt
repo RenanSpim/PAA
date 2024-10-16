@@ -10,7 +10,7 @@ bubble:
         100000 elementos: 21262.6 ms, 21004.4 ms, 21250.3 ms, média: 21172.4 ms
         1000000 elementos: 2226960 ms, 2161940 ms, 2120780 ms, média: 2169890 ms
     ordenado:
-        10 elementos: 0.00021 ms, 0.000119 ms, 0.000086ms, média: 0.000138333 ms
+        10 elementos: 0.00021 ms, 0.000119 ms, 0.000086 ms, média: 0.000138333 ms
         100 elementos: 0.032434 ms, 0.033745 ms, 0.033988 ms, média: 0.033389 ms
         1000 elementos: 2.32378 ms, 2.56487 ms, 2.90668 ms, média: 2.59844 ms
         10000 elementos: 81.8034 ms, 52.3631 ms, 48.948 ms, média: 61.0382 ms
@@ -22,30 +22,30 @@ bubble:
         1000 elementos: 4.06548 ms, 2.65905 ms, 2.41002 ms, média: 3.04485 ms
         10000 elementos: 245.013 ms, 243.411 ms, 244.85 ms, média: 244.425 ms
         100000 elementos: 24510 ms, 24484 ms, 24444 ms, média: 24479.3 ms
-        1000000 elementos: b
+        1000000 elementos: 1000000 elementos: 2635320 ms, 3341990 ms, 3868540 ms, média: 3281950 ms
 
 bucket:
     aleatório:
-        10 elementos: 0.003062 ms, 0.0006 ms, 0.000525 ms, média: 0.00139567 ms
-        100 elementos: 0.012033 ms, 0.009178 ms, 0.010913 ms, média: 0.010708 ms
-        1000 elementos: 0.673383 ms, 0.659057 ms, 0.675319 ms, média: 0.669253 ms
-        10000 elementos: 94.6221 ms, 94.6534 ms, 95.1335 ms, média: 94.803 ms
-        100000 elementos: 10321 ms, 11414.1 ms, 11015.7 ms, média: 10916.9 ms
-        1000000 elementos: c
+        10 elementos: 0.004165 ms, 0.000565 ms, 0.000475 ms, média: 0.001735 ms
+        100 elementos: 0.007519 ms, 0.003688 ms, 0.00376 ms, média: 0.004989 ms
+        1000 elementos: 0.059714 ms, 0.054084 ms, 0.053372 ms, média: 0.0557233 ms
+        10000 elementos: 0.651241 ms, 0.476814 ms, 0.486519 ms, média: 0.538191 ms
+        100000 elementos: 18.2493 ms, 31.4969 ms, 13.9927 ms, média: 21.2463 ms
+        1000000 elementos: 186.099 ms, 648.613 ms, 442.909 ms, média: 425.874 ms
     ordenado:
-        10 elementos: 0.003933 ms, 0.000504 ms, 0.000393 ms, média: 0.00161 ms
-        100 elementos: 0.011793 ms, 0.009273 ms, 0.01069 ms, média: 0.0105853 ms
-        1000 elementos: 0.678912 ms, 0.678588 ms, 0.716496 ms, média: 0.691332 ms
-        10000 elementos: 80.6309 ms, 80.9903 ms, 76.065 ms, média: 79.2287 ms
-        100000 elementos: 10116.2 ms, 9484.59 ms, 9612.42 ms, média: 9737.75 ms
-        1000000 elementos: a
+        10 elementos: 0.004934 ms, 0.000453 ms, 0.000297 ms, média: 0.00189467 ms
+        100 elementos: 0.00598 ms, 0.002412 ms, 0.002222 ms, média: 0.003538 ms
+        1000 elementos: 0.048875 ms, 0.051084 ms, 0.046014 ms, média: 0.0486577 ms
+        10000 elementos: 0.546253 ms, 0.405968 ms, 0.436375 ms, média: 0.462865 ms
+        100000 elementos: 7.06449 ms, 8.81361 ms, 9.28812 ms, média: 8.38874 ms
+        1000000 elementos: 66.8867 ms, 67.8389 ms, 73.4604 ms, média: 69.3953 ms
     inversamente ordenado:
-        10 elementos: 0.003504 ms, 0.000543 ms, 0.000438 ms, média: 0.001495 ms
-        100 elementos: 0.00565 ms, 0.002473 ms, 0.003859 ms, média: 0.003994 ms
-        1000 elementos: 0.03912 ms, 0.03425 ms, 0.033398 ms, média: 0.0355893 ms
-        10000 elementos: 83.455 ms, 72.0321 ms, 66.6952 ms, média: 74.0607 ms
-        100000 elementos: 13823.9 ms, 11260.5 ms, 11992.3 ms, média: 12358.9 ms
-        1000000 elementos: d
+        10 elementos: 0.00345 ms, 0.000443 ms, 0.000284 ms, média: 0.00139233 ms
+        100 elementos: 0.006041 ms, 0.002389 ms, 0.00219 ms, média: 0.00354 ms
+        1000 elementos: 0.051 ms, 0.038922 ms, 0.03773 ms, média: 0.0425507 ms
+        10000 elementos: 0.522245 ms, 0.36263 ms, 0.399514 ms, média: 0.42813 ms
+        100000 elementos: 6.78796 ms, 8.20468 ms, 6.26458 ms, média: 7.08574 ms
+        1000000 elementos: 67.2412 ms, 68.6196 ms, 50.8876 ms, média: 62.2495 ms
 
 counting:
     aleatório:
@@ -53,12 +53,12 @@ counting:
         100 elementos: 0.006181 ms, 0.000983 ms, 0.000857 ms, média: 0.00267367 ms
         1000 elementos: 0.011286 ms, 0.003331 ms, 0.00326 ms, média: 0.005959 ms
         10000 elementos: 0.078477 ms, 0.034544 ms, 0.034269 ms, média: 0.0490967 ms
-        100000 elementos: 1.28609 ms, 1.06817 ms, 3.8369 ms, média: 2.06372 ms
+        100000 elementos: 1.27548 ms, 3.14708 ms, 0.453773 ms, média: 1.62544 ms
         1000000 elementos: 39.1269 ms, 32.0643 ms, 17.7503 ms, média: 29.6471 ms
     ordenado:
-        10 elementos: 0.002062 ms, 0.000254 ms, 0.000153 ms, média: 0.000823 ms
+        10 elementos: 0.001537 ms, 0.000199 ms, 0.000117 ms, média: 0.000617667 ms
         100 elementos: 0.001801 ms, 0.000609 ms, 0.000541 ms, média: 0.000983667 ms
-        1000 elementos: 0.010105 ms, 0.004138 ms, 0.004065 ms, média: 0.00610267 ms
+        1000 elementos: 0.008904 ms, 0.004182 ms, 0.004036 ms, média: 0.00570733 ms
         10000 elementos: 0.080447 ms, 0.040446 ms, 0.039901 ms, média: 0.053598 ms
         100000 elementos: 0.905597 ms, 5.05029 ms, 2.63521 ms, média: 2.8637 ms
         1000000 elementos: 52.8679 ms, 35.8956 ms, 23.9236 ms, média: 37.5624 ms
@@ -100,133 +100,133 @@ insertion:
         1000 elementos: 0.314978 ms, 0.325262 ms, 1.33341 ms, média: 0.657885 ms
         10000 elementos: 67.6062 ms, 68.8978 ms, 63.0394 ms, média: 66.5145 ms
         100000 elementos: 4263.89 ms, 4224.95 ms, 4230.3 ms, média: 4239.72 ms
-        1000000 elementos: 
+        1000000 elementos: 740285 ms, 627287 ms, 615875 ms, média: 661149 ms
     ordenado:
-        10 elementos: 
-        100 elementos: 
-        1000 elementos: 
-        10000 elementos: 
-        100000 elementos: 
-        1000000 elementos: 
+        10 elementos: 0.000113 ms, 0.000032 ms, 0.000028 ms, média: 0.0000576667 ms
+        100 elementos: 0.000247 ms, 0.000144 ms, 0.000144 ms, média: 0.000178333 ms
+        1000 elementos: 0.001364 ms, 0.001268 ms, 0.001269 ms, média: 0.00130033 ms
+        10000 elementos: 0.012694 ms, 0.01254 ms, 0.012541 ms, média: 0.0125917 ms
+        100000 elementos: 0.129394 ms, 7.17927 ms, 0.216787 ms, média: 2.50849 ms
+        1000000 elementos: 7.71054 ms, 5.73816 ms, 5.47323 ms, média: 6.30731 ms
     inversamente ordenado:
-        10 elementos: 
-        100 elementos: 
-        1000 elementos: 
-        10000 elementos: 
-        100000 elementos: 
-        1000000 elementos: 
+        10 elementos: 0.000258 ms, 0.000155 ms, 0.000125 ms, média: 0.000179333 ms
+        100 elementos: 0.007359 ms, 0.007104 ms, 0.006843 ms, média: 0.007102 ms
+        1000 elementos: 0.634652 ms, 2.9094 ms, 0.644004 ms, média: 1.39602 ms
+        10000 elementos: 143.662 ms, 131.695 ms, 127.187 ms, média: 134.181 ms
+        100000 elementos: 8198.91 ms, 9210.03 ms, 9657.82 ms, média: 9022.25 ms
+        1000000 elementos: 1011280 ms, 1974820 ms, 1427240 ms, média: 1471110 ms
 
 merge:
     aleatório:
-        10 elementos: 
-        100 elementos: 
-        1000 elementos: 
-        10000 elementos: 
-        100000 elementos: 
-        1000000 elementos: 
+        10 elementos: 0.004806 ms, 0.000897 ms, 0.000623 ms, média: 0.00210867 ms
+        100 elementos: 0.013801 ms, 0.008199 ms, 0.007633 ms, média: 0.00987767 ms
+        1000 elementos: 0.09782 ms, 0.083817 ms, 0.09184 ms, média: 0.091159 ms
+        10000 elementos: 1.04295 ms, 0.991737 ms, 1.01721 ms, média: 1.0173 ms
+        100000 elementos: 13.925 ms, 12.5785 ms, 11.885 ms, média: 12.7962 ms
+        1000000 elementos: 138.623 ms, 126.01 ms, 125.327 ms, média: 129.987 ms
     ordenado:
-        10 elementos: 
-        100 elementos: 
-        1000 elementos: 
-        10000 elementos: 
-        100000 elementos: 
-        1000000 elementos: 
+        10 elementos: 0.005535 ms, 0.00066 ms, 0.000389 ms, média: 0.00219467 ms
+        100 elementos: 0.012659 ms, 0.005246 ms, 0.004607 ms, média: 0.007504 ms
+        1000 elementos: 0.059278 ms, 0.045902 ms, 0.045367 ms, média: 0.0501823 ms
+        10000 elementos: 0.521486 ms, 0.506972 ms, 0.683467 ms, média: 0.570642 ms
+        100000 elementos: 7.26196 ms, 6.22197 ms, 6.37504 ms, média: 6.61965 ms
+        1000000 elementos: 84.0842 ms, 77.1503 ms, 72.9849 ms, média: 78.0731 ms
     inversamente ordenado:
-        10 elementos: 
-        100 elementos: 
-        1000 elementos: 
-        10000 elementos: 
-        100000 elementos: 
-        1000000 elementos: 
+        10 elementos: 0.004678 ms, 0.000668 ms, 0.000417 ms, média: 0.001921 ms
+        100 elementos: 0.010512 ms, 0.005129 ms, 0.004524 ms, média: 0.00672167 ms
+        1000 elementos: 0.077444 ms, 0.058389 ms, 0.044244 ms, média: 0.0600257 ms
+        10000 elementos: 0.549994 ms, 0.468568 ms, 0.500241 ms, média: 0.506268 ms
+        100000 elementos: 6.51332 ms, 5.91371 ms, 5.65041 ms, média: 6.02581 ms
+        1000000 elementos: 74.8594 ms, 65.9072 ms, 64.8264 ms, média: 68.531 ms
 
 quick:
     aleatório:
-        10 elementos: 
-        100 elementos: 
-        1000 elementos: 
-        10000 elementos: 
-        100000 elementos: 
-        1000000 elementos: 
+        10 elementos: 0.00038 ms, 0.00031 ms, 0.000638 ms, média: 0.000442667 ms
+        100 elementos: 0.003485 ms, 0.002974 ms, 0.003005 ms, média: 0.00315467 ms
+        1000 elementos: 0.04008 ms, 0.041368 ms, 0.039809 ms, média: 0.040419 ms
+        10000 elementos: 0.458272 ms, 3.66828 ms, 0.48832 ms, média: 1.53829 ms
+        100000 elementos: 17.1959 ms, 17.3536 ms, 17.3367 ms, média: 17.2954 ms
+        1000000 elementos: 661.903 ms, 564.221 ms, 634.915 ms, média: 620.346 ms
     ordenado:
-        10 elementos: 
-        100 elementos: 
-        1000 elementos: 
-        10000 elementos: 
-        100000 elementos: 
-        1000000 elementos: 
+        10 elementos: 0.000414 ms, 0.000145 ms, 0.000076 ms, média: 0.000211667 ms
+        100 elementos: 0.005227 ms, 0.004786 ms, 0.0047 ms, média: 0.00490433 ms
+        1000 elementos: 0.420732 ms, 3.81366 ms, 0.420721 ms, média: 1.5517 ms
+        10000 elementos: 8.61864 ms, 10.583 ms, 9.59918 ms, média: 9.60028 ms
+        100000 elementos: 101.235 ms, 83.5299 ms, 83.1754 ms, média: 89.3135 ms
+        1000000 elementos: 2413.24 ms, 2779.31 ms, 3215.85 ms, média: 2802.8 ms
     inversamente ordenado:
-        10 elementos: 
-        100 elementos: 
-        1000 elementos: 
-        10000 elementos: 
-        100000 elementos: 
-        1000000 elementos: 
+        10 elementos: 0.000521 ms, 0.000314 ms, 0.000149 ms, média: 0.000328 ms
+        100 elementos: 0.006885 ms, 0.004976 ms, 0.004654 ms, média: 0.005505 ms
+        1000 elementos: 0.380236 ms, 0.421175 ms, 0.379537 ms, média: 0.393649 ms
+        10000 elementos: 5.75832 ms, 9.64633 ms, 6.384 ms, média: 7.26288 ms
+        100000 elementos: 89.7318 ms, 89.8192 ms, 65.8298 ms, média: 81.7936 ms
+        1000000 elementos: 4920.63 ms, 3777.58 ms, 4120.11 ms, média: 4272.78 ms
 
 radix:
     aleatório:
-        10 elementos: 
-        100 elementos: 
-        1000 elementos: 
-        10000 elementos: 
-        100000 elementos: 
-        1000000 elementos: 
+        10 elementos: 0.003689 ms, 0.000374 ms, 0.000336 ms, média: 0.00146633 ms
+        100 elementos: 0.003721 ms, 0.001699 ms, 0.00171 ms, média: 0.00237667 ms
+        1000 elementos: 0.022929 ms, 0.015904 ms, 0.015767 ms, média: 0.0182 ms
+        10000 elementos: 0.213996 ms, 0.158217 ms, 0.15663 ms, média: 0.176281 ms
+        100000 elementos: 6.93637 ms, 5.07721 ms, 1.96403 ms, média: 4.6592 ms
+        1000000 elementos: 109.45 ms, 54.761 ms, 40.5997 ms, média: 68.2703 ms
     ordenado:
-        10 elementos: 
-        100 elementos: 
-        1000 elementos: 
-        10000 elementos: 
-        100000 elementos: 
-        1000000 elementos: 
+        10 elementos: 0.000128 ms, 0.000038 ms, 0.000028 ms, média: 0.0000646667 ms
+        100 elementos: 0.000202 ms, 0.000099 ms, 0.000094 ms, média: 0.000131667 ms
+        1000 elementos: 0.000855 ms, 0.000773 ms, 0.00077 ms, média: 0.000799333 ms
+        10000 elementos: 0.096734 ms, 0.054289 ms, 0.054325 ms, média: 0.0684493 ms
+        100000 elementos: 5.48503 ms, 4.26056 ms, 1.33263 ms, média: 3.69274 ms
+        1000000 elementos: 110.614 ms, 45.1412 ms, 40.8406 ms, média: 65.532 ms
     inversamente ordenado:
-        10 elementos: 
-        100 elementos: 
-        1000 elementos: 
-        10000 elementos: 
-        100000 elementos: 
-        1000000 elementos: 
+        10 elementos: 0.000124 ms, 0.000047 ms, 0.000026 ms, média: 0.0000656667 ms
+        100 elementos: 0.000196 ms, 0.000098 ms, 0.000094 ms, média: 0.000129333 ms
+        1000 elementos: 0.011023 ms, 0.012598 ms, 0.005668 ms, média: 0.009763 ms
+        10000 elementos: 0.148373 ms, 0.102906 ms, 0.104293 ms, média: 0.118524 ms
+        100000 elementos: 5.16947 ms, 7.94754 ms, 5.02402 ms, média: 6.04701 ms
+        1000000 elementos: 120.163 ms, 94.8532 ms, 86.0952 ms, média: 100.371 ms
 
 selection:
     aleatório:
-        10 elementos: 
-        100 elementos: 
-        1000 elementos: 
-        10000 elementos: 
-        100000 elementos: 
-        1000000 elementos: 
+        10 elementos: 0.000354 ms, 0.000267 ms, 0.000261 ms, média: 0.000294 ms
+        100 elementos: 0.013335 ms, 0.012758 ms, 0.013808 ms, média: 0.0133003 ms
+        1000 elementos: 5.72509 ms, 4.72921 ms, 1.738 ms, média: 4.0641 ms
+        10000 elementos: 170.95 ms, 88.2172 ms, 85.6226 ms, média: 114.93 ms
+        100000 elementos: 7217.42 ms, 7725.49 ms, 7262.58 ms, média: 7401.83 ms
+        1000000 elementos: 1840430 ms, 1113180 ms, 726140 ms, média: 1226580 ms
     ordenado:
-        10 elementos: 
-        100 elementos: 
-        1000 elementos: 
-        10000 elementos: 
-        100000 elementos: 
-        1000000 elementos: 
+        10 elementos: 0.000219 ms, 0.000137 ms, 0.000102 ms, média: 0.000152667 ms
+        100 elementos: 0.005657 ms, 0.005569 ms, 0.005536 ms, média: 0.00558733 ms
+        1000 elementos: 0.512241 ms, 0.50534 ms, 9.52632 ms, média: 3.51463 ms
+        10000 elementos: 115.479 ms, 69.4884 ms, 51.3989 ms, média: 78.7888 ms
+        100000 elementos: 10847.1 ms, 10552.1 ms, 10887.8 ms, média: 10762.3 ms
+        1000000 elementos: 1824750 ms, 1111440 ms, 721273 ms, média: 1219150 ms
     inversamente ordenado:
-        10 elementos: 
-        100 elementos: 
-        1000 elementos: 
-        10000 elementos: 
-        100000 elementos: 
-        1000000 elementos: 
+        10 elementos: 0.00022 ms, 0.000136 ms, 0.000102 ms, média: 0.000152667 ms
+        100 elementos: 0.00565 ms, 0.005569 ms, 0.005543 ms, média: 0.00558733 ms
+        1000 elementos: 0.508667 ms, 4.27439 ms, 0.506825 ms, média: 1.76329 ms
+        10000 elementos: 117.849 ms, 96.2302 ms, 52.2019 ms, média: 88.7605 ms
+        100000 elementos: 12086 ms, 10647.9 ms, 11142.4 ms, média: 11292.1 ms
+        1000000 elementos: 1815150 ms, 1104130 ms, 718530 ms, média: 1212600 ms
 
 shell:
     aleatório:
-        10 elementos: 
-        100 elementos: 
-        1000 elementos: 
-        10000 elementos: 
-        100000 elementos: 
-        1000000 elementos: 
+        10 elementos: 0.000299 ms, 0.000185 ms, 0.000222 ms, média: 0.000235333 ms
+        100 elementos: 0.003924 ms, 0.003939 ms, 0.003814 ms, média: 0.00389233 ms
+        1000 elementos: 0.060011 ms, 0.060034 ms, 0.059368 ms, média: 0.0598043 ms
+        10000 elementos: 0.846854 ms, 8.96297 ms, 0.846402 ms, média: 3.55207 ms
+        100000 elementos: 24.238 ms, 26.2933 ms, 21.272 ms, média: 23.9344 ms
+        1000000 elementos: 369.662 ms, 327.89 ms, 347.653 ms, média: 348.402 ms
     ordenado:
-        10 elementos: 
-        100 elementos: 
-        1000 elementos: 
-        10000 elementos: 
-        100000 elementos: 
-        1000000 elementos: 
+        10 elementos: 0.000208 ms, 0.000088 ms, 0.000070 ms, média: 0.000122 ms
+        100 elementos: 0.000926 ms, 0.00082 ms, 0.000837 ms, média: 0.000861 ms
+        1000 elementos: 0.012183 ms, 0.012112 ms, 0.014095 ms, média: 0.0127967 ms
+        10000 elementos: 0.1814 ms, 0.204118 ms, 4.99062 ms, média: 1.79205 ms
+        100000 elementos: 2.53772 ms, 8.856 ms, 5.43656 ms, média: 5.61009 ms
+        1000000 elementos: 136.68 ms, 130.565 ms, 127.849 ms, média: 131.698 ms
     inversamente ordenado:
-        10 elementos: 
-        100 elementos: 
-        1000 elementos: 
-        10000 elementos: 
-        100000 elementos: 
-        1000000 elementos: 
+        10 elementos: 0.000357 ms, 0.000191 ms, 0.000099 ms, média: 0.000215667 ms
+        100 elementos: 0.001611 ms, 0.001701 ms, 0.001468 ms, média: 0.00159333 ms
+        1000 elementos: 0.017635 ms, 0.017498 ms, 0.018826 ms, média: 0.0179863 ms
+        10000 elementos: 0.236069 ms, 0.264662 ms, 3.27623 ms, média: 1.25899 ms
+        100000 elementos: 10.5522 ms, 6.57246 ms, 9.89877 ms, média: 9.00782 ms
+        1000000 elementos: 149.375 ms, 140.825 ms, 128.524 ms, média: 139.574 ms

@@ -101,6 +101,10 @@ public:
         }
     }
 
+    void merge(vector<double>& inputArr) {
+        _merge_sort(inputArr, 0, inputArr.size() - 1);
+    }
+
     void quick(vector<double>& inputArr) {
         _quick_sort(inputArr, 0, inputArr.size() - 1);
     }
@@ -126,38 +130,77 @@ private:
         Node *next;
     };
 
-    int partition(vector<double>& arr, int low, int high) {
-        double pivot = arr[high];
-        int i = low - 1;
+    void _merge_sort(vector<double>& inputArr, int left, int right) {
+        if (left >= right) return;
 
-        for (int j = low; j < high; j++) {
-            if (arr[j] < pivot) {
-                i++;
-                swap(arr[j], arr[i]);
+        int mid = left + (right - left) / 2;
+
+        _merge_sort(inputArr, left, mid);
+        _merge_sort(inputArr, mid + 1, right);
+
+        int n1 = mid - left + 1;
+        int n2 = right - mid;
+        vector<double> L(n1), R(n2);
+        double *pointer = L.data();
+
+        for (int i = 0; i < n1; i++) {
+            L[i] = inputArr[left + i];
+        }
+
+        for (int i = 0; i < n2; i++) {
+            R[i] = inputArr[mid + 1 + i];
+        }
+
+        int i = 0, j = 0, k = left;
+
+        while (i < n1 && j < n2) {
+            if (L[i] <= R[j]) {
+                inputArr[k++] = L[i++];
+            } else {
+                inputArr[k++] = R[j++];
             }
         }
 
-        swap(arr[i + 1], arr[high]);
+        int pointerInt = i;
+        int pointerMax = n1;
 
-        return i + 1;
+        if (n1 - i == 0) {
+            pointer = R.data();
+            pointerInt = j;
+            pointerMax = n2;
+        }
+
+        while (pointerInt < pointerMax) {
+            inputArr[k++] = pointer[pointerInt++];
+        }
     }
 
     void _quick_sort(vector<double>& inputArr, int low, int high) {
         if (low >= high) return;
 
-        int partitionI = partition(inputArr, low, high);
+        double pivot = inputArr[high];
+        int i = low - 1;
+
+        for (int j = low; j < high; j++) {
+            if (inputArr[j] >= pivot) continue;
+            
+            i++;
+            swap(inputArr[j], inputArr[i]);
+        }
+
+        swap(inputArr[i + 1], inputArr[high]);
+        int partitionI = i + 1;
 
         _quick_sort(inputArr, low, partitionI - 1);
         _quick_sort(inputArr, partitionI + 1, high);
-
     }
 };
 
 int main() {
-    vector<double> inputArr = { 24, 5, 1, 4, 6, 0 };
+    vector<double> inputArr = { 2, 24, 1, 2, 5, 1, 10, 8, 8, 4, 6, 0 };
     Sort sort;
     
-    sort.quick(inputArr);
+    sort.merge(inputArr);
     
     for (auto& elem : inputArr)
         cout << elem << " ";

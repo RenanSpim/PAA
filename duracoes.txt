@@ -1,0 +1,11 @@
+compilar: g++ -O3 main.cpp -o a
+rodar: ./a
+
+bubble:
+    aleatório:
+        10 elementos: 0.001686 ms, 0.001197 ms, 0.001242 ms, média: 0.001375 ms
+        100 elementos: 0.090149 ms, 0.096091 ms, 0.100698 ms, média: 0.095646 ms
+        1000 elementos: 7.84491 ms, 6.36822 ms, 4.5389 ms, média: 6.25068 ms
+        10000 elementos: 214.743 ms, 185.861 ms, 183.993 ms, média: 194.866 ms
+        100000 elementos: 21262.6 ms, 21004.4 ms, 21250.3 ms, média: 21172.4 ms
+        1000000 elementos: 

@@ -1,11 +1,13 @@
 #include <iostream>
+#include <chrono>
+#include <random>
 #include <vector>
 
 using namespace std;
 
 class Sort {
 public:
-    void bubble(vector<int>& inputArr) {
+    void bubble(vector<double>& inputArr) {
         int n = inputArr.size();
 
         for (int i = 0; i < n - 1; i++) {
@@ -278,12 +280,32 @@ private:
 };
 
 int main() {
-    vector<double> inputArr = { 2, 24, 1, 2, 5, 1, 10, 8, 8, 4, 6, 0 };
+    vector<double> inputArr(1000000);
     Sort sort;
+
+    for (int i = 0; i < inputArr.size(); i++) {
+        inputArr[i] = (rand() % 100000000) / 100;
+    }
     
-    sort.radix(inputArr);
+    std::chrono::duration<double, std::milli> durations[3];
+    double sum = 0;
+
+    for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < inputArr.size(); i++) {
+            inputArr[i] = (rand() % 100000000) / 100;
+        }
+
+        auto start = chrono::high_resolution_clock::now();
+        sort.bubble(inputArr);
+        auto end = chrono::high_resolution_clock::now();
+
+        durations[i] = end - start;
+    }
     
-    for (auto& elem : inputArr)
-        cout << elem << " ";
-    cout << endl;
+    for (int i = 0; i < 3; i++) {
+        cout << durations[i].count() << " ms, ";
+        sum += durations[i].count();
+    }
+
+    cout << "média: " << sum / 3.0 << " ms" << endl;
 }

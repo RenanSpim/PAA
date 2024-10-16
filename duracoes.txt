@@ -22,7 +22,7 @@ bubble:
         1000 elementos: 4.06548 ms, 2.65905 ms, 2.41002 ms, média: 3.04485 ms
         10000 elementos: 245.013 ms, 243.411 ms, 244.85 ms, média: 244.425 ms
         100000 elementos: 24510 ms, 24484 ms, 24444 ms, média: 24479.3 ms
-        1000000 elementos: 1000000 elementos: 2635320 ms, 3341990 ms, 3868540 ms, média: 3281950 ms
+        1000000 elementos: 2635320 ms, 3341990 ms, 3868540 ms, média: 3281950 ms
 
 bucket:
     aleatório:

@@ -124,6 +124,22 @@ public:
         }
     }
 
+    void shell(vector<double>& inputArr) {
+        int i, j, n = inputArr.size();
+        double temp;
+
+        for (int gap = n / 2; gap > 0; gap /= 2) {
+            for (i = gap; i < n; i++) {
+                temp = inputArr[i];
+                for (j = i; j >= gap && inputArr[j - gap] > temp; j -= gap) {
+                    inputArr[j] = inputArr[j - gap];
+                }
+
+                inputArr[j] = temp;
+            }
+        }
+    }
+
 private:
     struct Node {
         double data;
@@ -200,7 +216,7 @@ int main() {
     vector<double> inputArr = { 2, 24, 1, 2, 5, 1, 10, 8, 8, 4, 6, 0 };
     Sort sort;
     
-    sort.merge(inputArr);
+    sort.shell(inputArr);
     
     for (auto& elem : inputArr)
         cout << elem << " ";

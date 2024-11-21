@@ -102,8 +102,9 @@ namespace {
     }
 }
 
-// Testa os algoritmos e os salva em "comparacao.csv"
-void testGraphAlgorithms() {
+int main() {
+    srand(time(0));
+    
     vector<int> vertices = { 10, 100, 500, 1000, 2000, 5000, 10000 };
     ofstream file("comparacao.csv");
 
@@ -122,8 +123,9 @@ void testGraphAlgorithms() {
             auto end = high_resolution_clock::now();
 
             mean += duration<double, milli>(end - start).count() / N;
+            cout << mean << ", ";
         }
-
+        cout << endl;
         file << to_string(mean) << ",";
     }
 
@@ -139,7 +141,9 @@ void testGraphAlgorithms() {
             auto end = high_resolution_clock::now();
 
             mean += duration<double, milli>(end - start).count() / N;
+            cout << mean << ", ";
         }
+        cout << endl;
         mean /= N;
 
         file << to_string(mean) << ",";
@@ -157,7 +161,9 @@ void testGraphAlgorithms() {
             auto end = high_resolution_clock::now();
 
             mean += duration<double, milli>(end - start).count() / N;
+            cout << mean << ", ";
         }
+        cout << endl;
         mean /= N;
 
         file << to_string(mean) << ",";
@@ -175,18 +181,14 @@ void testGraphAlgorithms() {
             auto end = high_resolution_clock::now();
 
             mean += duration<double, milli>(end - start).count() / N;
+            cout << mean << ", ";
         }
+        cout << endl;
         mean /= N;
 
         file << to_string(mean) << ",";
     }
 
     file.close();
-}
-
-int main() {
-    srand(time(0));
-    testGraphAlgorithms();
-    
     return 0;
 }
